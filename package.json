@@ -1,0 +1,28 @@
+{
+  "name": "monero-quote-kit",
+  "version": "0.1.0",
+  "description": "Provider-agnostic crypto swap quote aggregation: parallel fan-out with per-provider deadlines, exact decimal ranking, KYC-aware ordering, and honest failure rows.",
+  "type": "module",
+  "license": "MIT",
+  "keywords": ["crypto", "exchange", "aggregator", "monero", "quotes", "typescript"],
+  "exports": {
+    "./decimal": "./src/decimal.ts",
+    "./rank": "./src/rank.ts",
+    "./aggregate": "./src/aggregate.ts",
+    "./types": "./src/types.ts",
+    "./providers/changenow": "./src/providers/changenow.ts",
+    "./providers/trocador": "./src/providers/trocador.ts"
+  },
+  "files": ["src", "README.md", "LICENSE"],
+  "scripts": {
+    "test": "node --experimental-strip-types --test test/*.test.ts",
+    "typecheck": "tsc --noEmit"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.0",
+    "typescript": "^5.8.0"
+  },
+  "engines": {
+    "node": ">=22.6"
+  }
+}
